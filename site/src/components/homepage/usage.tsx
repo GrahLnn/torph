@@ -18,8 +18,7 @@ export default {
   }
 }
 </script>`,
-  svelte: `
-<TextMorph>{EXAMPLE_TEXT}</TextMorph>`,
+  svelte: `<TextMorph>{EXAMPLE_TEXT}</TextMorph>`,
 };
 
 export const populateExample = (example: string, exampleText: string) => {

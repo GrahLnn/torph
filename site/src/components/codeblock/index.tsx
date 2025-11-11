@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import styles from "./styles.module.scss";
 import { TextMorph } from "torph/react";
+import { AutoResize } from "../auto-resizer";
 
 export const CodeBlock = ({
   code,
@@ -28,7 +29,9 @@ export const CodeBlock = ({
       >
         <TextMorph>{isCopied ? `Copied` : `Copy`}</TextMorph>
       </button>
-      <pre>{children ?? code}</pre>
+      <pre>
+        <AutoResize>{children ?? code}</AutoResize>
+      </pre>
     </div>
   );
 };
