@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 
 import { useEffect, useState } from "react";
 
-import { TextMorph } from "torph";
+import { TextMorph } from "torph/react";
 
 import { Footer } from "../footer";
 import { Button } from "../button";
@@ -55,7 +55,6 @@ const frameworks = [
     logo: <Logos.ReactLogo />,
     example: examples.react,
   },
-  /*
   {
     name: "TypeScript",
     entrypoint: "torph",
@@ -74,7 +73,6 @@ const frameworks = [
     logo: <Logos.SvelteLogo />,
     example: examples.svelte,
   },
-  */
 ];
 
 export default function Home() {
@@ -99,11 +97,12 @@ export default function Home() {
               <strong>Text Morph</strong> for
             </span>
             <button
-              disabled
               onClick={() => setFrameworkIndex((i) => i + 1)}
               className={styles.frameworkButton}
             >
-              {frameworks[frameworkIndex % frameworks.length].logo}
+              <div className={styles.logo} key={frameworkIndex}>
+                {frameworks[frameworkIndex % frameworks.length].logo}
+              </div>
               <strong>
                 <TextMorph>
                   {frameworks[frameworkIndex % frameworks.length].name}
