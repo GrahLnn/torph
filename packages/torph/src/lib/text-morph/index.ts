@@ -1,6 +1,6 @@
 import type { TextMorphOptions } from "./types";
 
-export { TextMorphOptions } from "./types";
+export type { TextMorphOptions } from "./types";
 
 type Block = {
   id: string;
