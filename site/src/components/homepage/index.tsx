@@ -6,6 +6,7 @@ import { TextMorph } from "torph/react";
 
 import { Footer } from "../footer";
 import { Button } from "../button";
+import { Dropdown } from "../dropdown";
 import { CodeBlock } from "../codeblock";
 import { InstallCommands } from "./install-cmd";
 import { examples, populateExample } from "./usage";
@@ -96,19 +97,25 @@ export default function Home() {
             <span>
               <strong>Text Morph</strong> for
             </span>
-            <button
-              onClick={() => setFrameworkIndex((i) => i + 1)}
-              className={styles.frameworkButton}
+
+            <Dropdown
+              options={frameworks.map((f, i) => ({
+                label: f.name,
+                icon: f.logo,
+                disabled: frameworkIndex === i,
+                onClick: () => setFrameworkIndex(i),
+              }))}
             >
-              <div className={styles.logo} key={frameworkIndex}>
+              <div className={styles.framework}>
                 {frameworks[frameworkIndex % frameworks.length].logo}
+
+                <strong>
+                  <TextMorph>
+                    {frameworks[frameworkIndex % frameworks.length].name}
+                  </TextMorph>
+                </strong>
               </div>
-              <strong>
-                <TextMorph>
-                  {frameworks[frameworkIndex % frameworks.length].name}
-                </TextMorph>
-              </strong>
-            </button>
+            </Dropdown>
           </h1>
           <p>Dependency-free animated text component.</p>
         </div>
@@ -156,7 +163,7 @@ export default function Home() {
           <CodeBlock
             code={populateExample(
               frameworks[frameworkIndex % frameworks.length].example,
-              texts[textIndex % texts.length]
+              texts[textIndex % texts.length],
             )}
           >
             {`import { TextMorph } from '`}
