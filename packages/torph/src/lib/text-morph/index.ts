@@ -298,7 +298,7 @@ export class TextMorph {
     style.dataset.torph = "true";
     style.innerHTML = `
 [torph-root] {
-  display: inline-block;
+  display: inline-flex;
   position: relative;
   will-change: width, height;
   transition-property: width, height;
