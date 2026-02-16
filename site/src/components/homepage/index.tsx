@@ -77,10 +77,12 @@ export default function Home() {
             </div>
 
             <CodeBlock
-              code={populateExample(
-                frameworks[frameworkIndex % frameworks.length].example,
-                text,
-              )}
+              code={`import { TextMorph } from '${frameworks[frameworkIndex % frameworks.length].entrypoint}';
+
+${populateExample(
+  frameworks[frameworkIndex % frameworks.length].example,
+  text,
+)}`}
             >
               <TextMorph>
                 {`import { TextMorph } from '${frameworks[frameworkIndex % frameworks.length].entrypoint}';`}
