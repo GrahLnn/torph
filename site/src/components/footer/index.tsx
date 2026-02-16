@@ -22,14 +22,14 @@ export const Footer = () => {
         </a>
       </div>
       <div className={styles.details}>
+        <span>v{version}</span> •
         <a
           href="https://github.com/lochie/torph"
           target="_blank"
           rel="noopener noreferrer"
         >
           GitHub
-        </a>{" "}
-        • <span>v{version}</span>
+        </a>
       </div>
     </footer>
   );
