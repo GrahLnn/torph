@@ -12,7 +12,7 @@
     "lint:fix": "pnpm --filter=torph lint:fix",
     "pre-commit": "pnpm run --filter=torph pre-commit",
     "version": "changeset version && git add --all",
-    "release": "pnpm build && changeset publish"
+    "release": "pnpm build && changeset publish && git push --follow-tags"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
