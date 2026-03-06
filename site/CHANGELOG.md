@@ -1,5 +1,20 @@
 # site
 
+## 0.1.1
+
+### Patch Changes
+
+- 7fe6190: fix: Fix svelte example
+- Updated dependencies [48754a5]
+- Updated dependencies [48754a5]
+- Updated dependencies [48754a5]
+- Updated dependencies [48754a5]
+- Updated dependencies [48754a5]
+- Updated dependencies [bcc7d14]
+- Updated dependencies [7fe6190]
+- Updated dependencies [48754a5]
+  - torph@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes
