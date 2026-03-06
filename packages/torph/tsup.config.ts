@@ -62,7 +62,7 @@ export default defineConfig((options) => {
       dts: false,
       target: "es2022",
       treeshake: true,
-      external: ["svelte", "torph"],
+      external: ["svelte"],
       minify: !options.watch,
       loader: {
         ".svelte": "copy",
