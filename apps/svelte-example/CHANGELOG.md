@@ -1,5 +1,12 @@
 # svelte-example
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [08b3274]
+  - torph@0.0.8
+
 ## 0.0.3
 
 ### Patch Changes

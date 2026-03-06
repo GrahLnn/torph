@@ -1,5 +1,11 @@
 # torph
 
+## 0.0.8
+
+### Patch Changes
+
+- 08b3274: Fix Vue build failing to resolve `torph` package entry. Replaced `.vue` SFC with compiled `defineComponent` so tsup can bundle it directly, and simplified the Vue tsup config to a single build step with proper type generation.
+
 ## 0.0.7
 
 ### Patch Changes
