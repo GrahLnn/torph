@@ -27,7 +27,7 @@ import {
 } from "./utils/reduced-motion";
 
 export type { TextMorphOptions } from "./types";
-export { spring, type SpringParams, type SpringResult } from "./utils/spring";
+export type { SpringParams } from "./utils/spring";
 export { MorphController } from "./controller";
 
 export const DEFAULT_AS = "span";
