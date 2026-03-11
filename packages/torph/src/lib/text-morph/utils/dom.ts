@@ -1,17 +1,20 @@
 import type { Segment } from "./segment";
 import { ATTR_EXITING, ATTR_ID, ATTR_ITEM } from "./constants";
-import { parseTranslate } from "./animate";
 
-export function detachFromFlow(elements: HTMLElement[]) {
+export function detachFromFlow(
+  container: HTMLElement,
+  elements: HTMLElement[],
+) {
+  const containerRect = container.getBoundingClientRect();
   const snapshots = elements.map((child) => {
-    const { tx, ty } = parseTranslate(child);
+    const rect = child.getBoundingClientRect();
     const opacity = Number(getComputedStyle(child).opacity) || 1;
     child.getAnimations().forEach((a) => a.cancel());
     return {
-      left: child.offsetLeft + tx,
-      top: child.offsetTop + ty,
-      width: child.offsetWidth,
-      height: child.offsetHeight,
+      left: rect.left - containerRect.left,
+      top: rect.top - containerRect.top,
+      width: rect.width,
+      height: rect.height,
       opacity,
     };
   });

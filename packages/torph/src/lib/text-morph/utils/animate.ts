@@ -134,8 +134,9 @@ export function transitionContainerSize(
   element.style.height = "auto";
   void element.offsetWidth;
 
-  const newWidth = element.offsetWidth;
-  const newHeight = element.offsetHeight;
+  const newRect = element.getBoundingClientRect();
+  const newWidth = newRect.width;
+  const newHeight = newRect.height;
 
   element.style.width = `${oldWidth}px`;
   element.style.height = `${oldHeight}px`;
