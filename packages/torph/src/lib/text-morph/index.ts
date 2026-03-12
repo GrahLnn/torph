@@ -126,8 +126,9 @@ export class TextMorph {
   }
 
   private createTextGroup(value: string, element: HTMLElement) {
-    const oldWidth = element.offsetWidth;
-    const oldHeight = element.offsetHeight;
+    const oldRect = element.getBoundingClientRect();
+    const oldWidth = oldRect.width;
+    const oldHeight = oldRect.height;
 
     const segments = segmentText(value, this.options.locale!);
 
@@ -152,7 +153,7 @@ export class TextMorph {
       newIds,
     );
 
-    detachFromFlow(exiting);
+    detachFromFlow(element, exiting);
     reconcileChildren(element, oldChildren, newIds, segments);
 
     this.currentMeasures = measure(this.element);
